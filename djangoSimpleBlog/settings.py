@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'djangoSimpleBlog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neondb',
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_hBY7eNEpXv3j',
+        'HOST': 'ep-rough-sound-adztjbli-pooler.c-2.us-east-1.aws.neon.tech',
+        'PORT': 5432
     }
 }
 
