@@ -1,47 +1,24 @@
 {
-
-  "framework": null,
-
+  "version": 2,
   "builds": [
-
     {
-
-      "src": "note_backend_s12025/wsgi.py",
-
+      "src": "djangoSimpleBlog/wsgi.py",
       "use": "@vercel/python",
-
-      "config": { "maxLambdaSize":  "15mb", "runtime":  "python3.9" }
-
-    }
-
-  ],
-
-  "routes": [
-
-    {
-
-      "src": "/(.*)",
-
-      "dest": "note_backend_s12025/wsgi.py",
-
-      "headers": {
-
-        "Access-Control-Allow-Origin": "*",
-
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, DELETE, PUT"
-
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.9"
       }
-
-    },
-
-    {
-
-      "src": "/(.*)",
-
-      "dest": "note_backend_s12025/wsgi.py"
-
     }
-
-  ]
-
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/djangoSimpleBlog/wsgi.py"
+    }
+  ],
+  "env": {
+    "PYTHONPATH": "/var/task",
+    "DJANGO_SETTINGS_MODULE": "djangoSimpleBlog.settings",
+    "ALLOWED_HOSTS": ".vercel.app"
+  }
 }
