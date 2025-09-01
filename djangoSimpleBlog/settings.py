@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djangoSimpleBlog.wsgi.application'
+WSGI_APPLICATION = 'djangoSimpleBlog.wsgi.app'
 
 
 # Database
